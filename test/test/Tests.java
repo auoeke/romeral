@@ -1,14 +1,25 @@
 package test;
 
+import java.util.stream.LongStream;
+import net.auoeke.romanumerals.Numeral;
+import net.auoeke.romanumerals.NumeralSystem;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
-import static net.auoeke.romanumerals.Romanumerals.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Testable
 public class Tests {
 	@Test void test() {
+		LongStream.of(2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 20, 30, 40, 60, 70, 80, 90, 101, 110, 1010, 1011, 1100, 1101, 11000)
+			.forEach(value -> Assertions.assertThrows(IllegalArgumentException.class, () -> Numeral.of("A", value), String.valueOf(value)));
+
+		LongStream.of(1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000)
+			.forEach(value -> Assertions.assertDoesNotThrow(() -> Numeral.of("A", value), String.valueOf(value)));
+
+		var system = NumeralSystem.standard.with(Numeral.of("A", 5000));
+
 		eq("nulla", 0);
 		eq("I", 1);
 		eq("II", 2);
@@ -78,6 +89,6 @@ public class Tests {
 	}
 
 	private static void eq(String roman, long binary) {
-		assertEquals(roman, toRoman(binary));
+		assertEquals(roman, NumeralSystem.standard.toRoman(binary));
 	}
 }
