@@ -1,4 +1,4 @@
-package net.auoeke.romanumerals;
+package net.auoeke.rumeral;
 
 import java.util.AbstractList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package net.auoeke.romanumerals;
+package net.auoeke.rumeral;
 
 final class NumeralElement extends Numeral {
 	final int index;

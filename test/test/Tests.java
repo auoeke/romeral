@@ -2,8 +2,8 @@ package test;
 
 import java.util.Map;
 import java.util.stream.LongStream;
-import net.auoeke.romanumerals.Numeral;
-import net.auoeke.romanumerals.NumeralSystem;
+import net.auoeke.rumeral.Numeral;
+import net.auoeke.rumeral.NumeralSystem;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;

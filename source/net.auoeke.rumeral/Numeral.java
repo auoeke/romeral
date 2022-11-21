@@ -1,8 +1,8 @@
-package net.auoeke.romanumerals;
+package net.auoeke.rumeral;
 
 import java.util.Objects;
 
-public sealed class Numeral implements Comparable<Numeral> permits NumeralElement {
+public sealed class Numeral implements Comparable<Numeral> permits net.auoeke.rumeral.NumeralElement {
 	final String roman;
 	final long value;
 	final int firstDigit;
