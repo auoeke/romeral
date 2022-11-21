@@ -1,5 +1,7 @@
 plugins {
 	id("java")
+	id("signing")
+	id("maven-publish")
 	id("net.auoeke.gronk").version("3.+")
 }
 
@@ -18,4 +20,50 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+java {
+	withJavadocJar()
+}
+
+jar {
+	manifest {
+		attributes(
+			"Automatic-Module-Name": "rumeral"
+		)
+	}
+}
+
+publishing {
+	repositories {
+		maven(findProperty("maven.repository")) {
+			username(findProperty("maven.username"))
+			password(findProperty("maven.password"))
+		}
+	}
+
+	publications.withType(MavenPublication) {
+		pom {
+			url.set("https://github.com/auoeke/rumeral")
+
+			licenses {
+				license {
+					url.set("https://github.com/auoeke/gronk/blob/master/LICENSE.md")
+				}
+			}
+
+			developers {
+				developer {
+					id.set("auoeke")
+					email.set("tjmnkrajyej@gmail.com")
+				}
+			}
+
+			scm {
+				url.set("https://github.com/auoeke/rumeral/tree/master")
+				connection.set("scm:git:git://github.com/auoeke/rumeral.git")
+				developerConnection.set("scm:git:git://github.com/auoeke/rumeral.git")
+			}
+		}
+	}
 }
