@@ -225,7 +225,7 @@ public final class NumeralSystem extends AbstractList<Numeral> {
 	}
 
 	@Override public int hashCode() {
-		return Objects.hash(this.numerals);
+		return Arrays.hashCode(this.numerals);
 	}
 
 	private NumeralElement numeralPrefix(String roman, int offset) {
