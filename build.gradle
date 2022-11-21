@@ -30,7 +30,7 @@ java {
 jar {
 	manifest {
 		attributes(
-			"Automatic-Module-Name": "rumeral"
+			"Automatic-Module-Name": "romeral"
 		)
 	}
 }
@@ -45,7 +45,7 @@ publishing {
 
 	publications.withType(MavenPublication) {
 		pom {
-			url.set("https://github.com/auoeke/rumeral")
+			url.set("https://github.com/auoeke/romeral")
 
 			licenses {
 				license {
@@ -61,9 +61,9 @@ publishing {
 			}
 
 			scm {
-				url.set("https://github.com/auoeke/rumeral/tree/master")
-				connection.set("scm:git:git://github.com/auoeke/rumeral.git")
-				developerConnection.set("scm:git:git://github.com/auoeke/rumeral.git")
+				url.set("https://github.com/auoeke/romeral/tree/master")
+				connection.set("scm:git:git://github.com/auoeke/romeral.git")
+				developerConnection.set("scm:git:git://github.com/auoeke/romeral.git")
 			}
 		}
 	}

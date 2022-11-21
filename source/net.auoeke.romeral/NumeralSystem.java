@@ -1,11 +1,10 @@
-package net.auoeke.rumeral;
+package net.auoeke.romeral;
 
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.Objects;
 import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
